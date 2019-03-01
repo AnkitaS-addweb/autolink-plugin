@@ -1,7 +1,32 @@
 {
-    "name": "addweb/autolink",
-    "description": "Replace Key with link",
-    "type": "library",
-    "license": "MIT",
-    "require": {}
+  "name": "silverstripe/autolink",
+  "description": "Replace Key with link",
+  "homepage": "https://github.com/AnkitaS-addweb/autolink-plugin",
+  "keywords": ["silverstripe", "replace", "autolink"],
+  "license": "BSD-3-Clause",
+  "authors": [
+    {"name": "Ankita Shrivastava","email": "ankita.s.addweb@gmail.com"}
+  ],
+  "support": {
+    "issues": "http://github.com/my-vendor/my-module/issues"
+  },
+  "require": {
+    "silverstripe/cms": "^4",
+    "silverstripe/framework": "^4"
+  },
+  "autoload": {
+    "psr-4": {
+        "silverstripe\\Autolink\\": "src/"
+    }
+  },
+  "extra": {
+    "installer-name": "Autolink",
+    "expose": [
+        "client"
+    ]
+/*    "screenshots": [
+      "relative/path/screenshot1.png",
+      "http://myhost.com/screenshot2.png"
+    ]*/
+  }
 }
