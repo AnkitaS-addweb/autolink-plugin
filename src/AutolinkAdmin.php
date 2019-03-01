@@ -1,15 +1,19 @@
 <?php 
+
+namespace SilverStripe\Autolink;
+
 use SilverStripe\Admin\ModelAdmin;
 
-class AutolinkAdmin extends ModelAdmin 
+
+class AutolinkAdmin extends ModelAdmin
 {
 
+    private static $menu_title = 'Autolink';
+    private static $url_segment = 'autolinks';
     private static $managed_models = [
-        'Autolink',
+        Autolink::class,
     ];
 
-    private static $url_segment = 'autolink';
-    private static $menu_title = 'Autolink';
     private static $menu_icon_class = 'font-icon-link';
 
     public function getSearchContext() 
@@ -20,8 +24,9 @@ class AutolinkAdmin extends ModelAdmin
 
     public function getList() 
     {
-        $list = parent::getList();
+        $list = parent::getList();  
         return $list;
     }
-
 }
+
+?>

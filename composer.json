@@ -1,0 +1,7 @@
+{
+    "name": "addweb/autolink",
+    "description": "Replace Key with link",
+    "type": "library",
+    "license": "MIT",
+    "require": {}
+}
