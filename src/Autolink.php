@@ -1,6 +1,7 @@
 <?php
 
 use SilverStripe\ORM\DataObject;
+use SilverStripe\CMS\Model\SiteTree;
 
 class Autolink extends DataObject 
 {
@@ -8,6 +9,8 @@ class Autolink extends DataObject
     private static $db = [
         'keyword' => 'Varchar',
         'Url' => 'Varchar',
+        'ContentType' => 'Varchar',
+        'PageRegion' => 'Int',
     ];
 
 
@@ -21,7 +24,11 @@ class Autolink extends DataObject
 	  'Url'
 	];
 
-    
+    private static $has_many = array (
+        'PageRegion' => 'PageRegion',
+      );
+
+ 
     function getCMSValidator() {
         return new Autolink_Validator();
     }

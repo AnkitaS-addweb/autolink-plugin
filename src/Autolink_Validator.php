@@ -7,7 +7,6 @@ class Autolink_Validator extends RequiredFields {
     function php($data) {
         $bRet = parent::php($data);
         $identifierField = 'keyword';
-        //do checking here
         if (empty($data['keyword']))
             $this->validationError('keyword','Keyword cannot be empty','required');
         if (empty($data['Url']))
@@ -33,6 +32,5 @@ class Autolink_Validator extends RequiredFields {
                 $valid = false;
             }
         return count($this->getErrors());
-
     }
 }

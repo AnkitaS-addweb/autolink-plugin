@@ -65,8 +65,14 @@ class AutolinkSearch extends DataExtension
     {
         $listautolink = DB::query('SELECT * FROM "Autolink"');
 
+
+        /*echo "<pre>";
+        print_r(SiteTree::page_type_classes()); 
+
+        die();*/
+
         /*$arrayData = new ArrayData([
-            'Content' => 'Content'
+            'Form' => 'Content'
         ]);
 
         echo $arrayData->renderWith(array('Page'));*/
@@ -88,28 +94,5 @@ class AutolinkSearch extends DataExtension
                 $field = trim($field);
             }
         }
-    }
-
-    public static function get_extra_config($class, $extensionClass, $args)
-    {
-        return array(
-            'indexes' => array(
-                'SearchFields' => array(
-                    'type' => 'fulltext',
-                    'name' => 'SearchFields',
-                    'columns' => $args,
-                )
-            )
-        );
-    }
-
-    /**
-     * Shows all classes that had the {@link FulltextSearchable} extension applied through {@link enable()}.
-     *
-     * @return array
-     */
-    public static function get_searchable_classes()
-    {
-        return self::$searchable_classes;
     }
 }
